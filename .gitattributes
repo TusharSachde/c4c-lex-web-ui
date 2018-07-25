@@ -1,2 +1,4 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+dist/*.js -diff
+dist/*.css -diff
+dist/*.map -diff
+dist/*.zip -diff
