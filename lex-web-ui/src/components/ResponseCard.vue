@@ -20,7 +20,7 @@
     >
       <v-btn
         v-if="button.text && button.value"
-        v-on:click.once.native="onButtonClick(button.value)"
+        v-on:click.once.native="onButtonClick(button)"
         v-bind:disabled="hasButtonBeenClicked"
         default
       >
@@ -65,11 +65,12 @@ export default {
   computed: {
   },
   methods: {
-    onButtonClick(value) {
+    onButtonClick(data) {
       this.hasButtonBeenClicked = true;
       const message = {
         type: 'human',
-        text: value,
+        text: data.value,
+        value: data.text,
       };
 
       this.$store.dispatch('postTextMessage', message);
@@ -95,6 +96,8 @@ export default {
   padding: 0.33em;
 }
 .card__actions.button-row {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 0.5em;
 }

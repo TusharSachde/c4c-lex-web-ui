@@ -220,7 +220,6 @@ export default {
   border-radius: 10px;
   display: inline-flex;
   font-size: calc(1em + 0.25vmin);
-  padding: 0 12px;
   width: fit-content;
   align-self: center;
 }
